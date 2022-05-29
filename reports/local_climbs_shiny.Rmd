@@ -1,0 +1,42 @@
+---
+title: "Local Climbs"
+runtime: shiny
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, error = FALSE)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(DT)
+```
+
+```{r dt}
+date <- "2021-05-08"
+fname <- paste0("../data_processed/local_", date, ".RDS")
+dt <- readRDS(fname)
+```
+
+Local climbs on `r date``, full segments only. Reduced number of columns.
+
+```{r data}
+data <- dt %>% 
+  filter(full == 1) %>% 
+  arrange(score) %>% 
+  mutate(power = ifelse(power_meter, power_w, "")) %>% 
+  select(-c(sub, full, notes, area, dist_away, vam, p_vam, 
+            heart_rate, cadence, power_w, power_meter, segment_id, city, direction, cat)) %>% 
+  select(-activity) %>% 
+  rename(behind = behind_pc) %>% 
+  mutate(name = str_sub(name, 1, 30)) 
+```
+
+```{r table, include = T}
+renderDataTable(data)
+```
+
+```{r tbl_static}
+data %>% 
+  edwards::my_kable()
+```
