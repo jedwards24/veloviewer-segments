@@ -1,0 +1,65 @@
+raw_name,new_name,n
+★,starred,8
+Activity,activity,9
+Activity Id,activity_id,9
+Activity Private,activity_private,8
+Bearing,bearing,8
+Behind Leader,behind_leader,9
+Behind Leader %,behind_leader_pct,9
+Cadence,cadence,9
+Cat,cat,9
+Changed,changed,9
+City,city,9
+Cmts,cmts,9
+Com,com,3
+Device/App,device_app,2
+Dist away km,dist_away,8
+Dist away m,dist_away,1
+Dist km,dist_m,8
+Dist m,dist_m,1
+Dist start to end km,dist_start_to_end_m,3
+Elapsed Time,elapsed_time,9
+Elv change m,elv_change_m,9
+Elv gain m,elv_gain_m,9
+FTP (W),ftp_w,9
+FTP bpm,ftp_bpm,9
+Gear,gear,9
+Grade %,grade_pct,9
+Group Size,group_size,9
+Heart Rate,heart_rate,9
+KOM Time,kom_time,9
+Leader RP,leader_rp,9
+Leader VAM,leader_vam,9
+Max Elv m,max_elv_m,9
+Max Grade %,max_grade_pct,9
+Max HR,max_hr,9
+Name,name,9
+Not PR!,not_pr,8
+Orig,orig,9
+Pace /100m,pace_100_m,8
+Pace /km,pace_km,8
+Pos,pos,9
+Pos +/-,pos_change,9
+Pos Score,pos_score,9
+Power Meter,power_meter,9
+Power W,power_w,9
+pVAM,p_vam,9
+RP,rp,9
+Segment Id,segment_id,1
+Segment Id...50,segment_id_50,3
+Segment Id...52,segment_id_52,8
+Segment Id...54,segment_id_54,3
+Segment Id...56,segment_id_56,2
+Speed km/h,speed_kmh,9
+starred,starred,1
+Start latitude,start_latitude,2
+Start longitude,start_longitude,2
+State,state,9
+Temp °C,temp_c,9
+Total,total,9
+Tries,tries,9
+Trn,trn,3
+Type,type,9
+VAM,vam,9
+VVOM,vvom,9
+When,when,9
