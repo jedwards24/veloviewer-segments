@@ -26,18 +26,20 @@ seg_names <- c("Townhead Lane to Crummack Gravel", "Stainforth - Halton Gill Tot
                "Brootes Ln Climb", "Bowland Knotts proper", "Dent Dale Head",  
                "Arncliffe proper", "Newby Head official climb", 
                "Gordale Ln Climb", "Malham Cove",  "Steeeeep", "Bentham bridge to Cross O'Greet", 
-               "Cross O' Greet from Aikengill Rd", "Ingleton to Ribblehead")
+               "Cross O' Greet from Aikengill Rd", "Ingleton to Ribblehead",
+               "Settle nipple")
+# To add: climb from kirkby malham
 dts <- dt %>% 
   filter(name %in% seg_names) %>% 
   arrange(name) %>% 
-  select(name, segment_id, dist_km, dist_away) 
+  select(segment_id, name, dist_km, dist_away) 
 dts2 <- dts %>% 
   slice(-15) %>% 
   arrange(dist_away)
 prinf(dts2)
 pull(dts2, segment_id) %>% 
   datapasta::dpasta()
-c(1546074, 4651703, 5613513, 714980, 984974, 8556711, 14867453, 816007, 7081580, 998225, 29205109, 
-  5513688, 8181855, 6688008, 6688083, 17652953, 16336352, 6474203, 14906198, 4955682, 15367928, 
-  7818808, 28975969, 12499508)
+c(28975969, 4955682, 6474203, 998225, 7818808, 6688008, 8181855, 7081580, 14906198, 984974, 
+  16336352, 29205109, 12499508, 714980, 5613513, 5513688, 14867453, 1546074, 17652953, 816007, 
+  6688083, 15367928, 4651703, 8556711, 1345351)
 write_csv(dts2, "data_aux/settle_local.csv")

@@ -1,0 +1,77 @@
+---
+title: "Local Climbs"
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, error = FALSE, warning = FALSE)
+library(tidyverse)
+library(edwards)
+library(knitr)
+library(kableExtra)
+library(reactable)
+```
+
+```{r dt}
+date <- "2022-05-28"
+fname <- paste0("../data_processed/settle_", date, ".RDS")
+dt <- readRDS(fname) %>% 
+  mutate(power = ifelse(power_meter, power, "")) %>% 
+  rename(behind = behind_pct) %>% 
+  select(-c(name, area, notes, dist_away, vam, p_vam, activity,
+            heart_rate, cadence, power_meter, segment_id, city, cat)) 
+```
+
+Local climbs `r date`. Reduced number of columns.
+
+```{r data}
+dt %>% 
+  arrange(climb) %>% 
+#  mutate(name = str_sub(name, 1, 30)) %>% 
+  my_kable()
+```
+
+```{r table1, include = T}
+dt %>% 
+  select(climb, behind, power, when, dist, time, elv_gain, grade, score, tries, pos, total) %>% 
+#  mutate(name = str_sub(name, 1, 25)) %>% 
+  reactable(filterable = T, defaultPageSize = 60, compact = T, striped = T, fullWidth = F)
+```
+
+```{r table2, include = T}
+dt %>% 
+  select(climb, behind, power, when, dist, time, elv_gain, grade, score, tries, pos, total) %>% 
+  DT::datatable()
+```
+
+Segments by power:
+
+```{r dtp}
+dtp <- dt %>% 
+  filter(power != "") %>%
+  arrange(desc(time)) %>%
+  mutate(power = as.numeric(power)) %>% 
+  mutate(cum_max_power = cummax(power)) %>% 
+  mutate(is_max = (cum_max_power == power))
+```
+
+```{r power_plot}
+dtp %>% 
+  select(climb, time,  power, cum_max_power, is_max) %>% 
+  ggplot(aes(x = time, y = power, label = climb, colour = is_max)) +
+  geom_point() +
+  ggrepel::geom_text_repel() +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  xlim(0, NA) +
+  ylim(200, NA)
+```
+
+Dominating segments:
+
+```{r power_table}
+dtp %>% 
+  filter(power == cum_max_power) %>% 
+  select(power, time, elv_gain, climb) %>% 
+  my_kable()
+```
