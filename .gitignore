@@ -7,3 +7,5 @@ data/
 data_processed/
 *.html
 *.pdf
+data_aux/local_full.csv
+data_aux/local.csv

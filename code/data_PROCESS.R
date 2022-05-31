@@ -14,3 +14,16 @@ save_check(dt, save_name, overwrite = T)
 dt2 <- vv_process_local(dt)
 save_name <- paste0("data_processed/", attr(dt2, "location"), "_", file_date, ".RDS")
 save_check(dt2, save_name, overwrite = T)
+
+# Reprocess old files -----------
+
+latest <- latest_file("data", "vv_bike", n = 2:10)
+for (i in seq_along(latest)){
+  file_date <- str_extract(latest[i], "\\d{4}-\\d{2}-\\d{2}")
+  dt <- vv_process(latest[i], location = "lancaster")
+  save_name <- paste0("data_processed/bike_segments_", file_date, ".RDS")
+  save_check(dt, save_name, overwrite = T)
+  dt2 <- vv_process_local(dt)
+  save_name <- paste0("data_processed/", attr(dt2, "location"), "_", file_date, ".RDS")
+  save_check(dt2, save_name, overwrite = T)
+}

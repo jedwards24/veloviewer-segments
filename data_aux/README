@@ -1,0 +1,6 @@
+README data aux folder
+----------------------
+
+The three "local..." csvs were used to select a shortlist of local lancaster climbs. Only "local_climbs.csv" is used in data processing. 
+
+The other two files were added in 2022. "col_name_lookup.csv" is used to rename columns and "settle_local.csv" gives selected info for Settle local climbs. It has a similar role to "local_climbs.csv" in data processing.

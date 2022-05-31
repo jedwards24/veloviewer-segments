@@ -1,0 +1,56 @@
+name,sub,area,direction,notes,climb,full,segment_id
+Abbey stead 20%,0,abbey,e,,abbe,1,2038225
+Hindberry Wood ramp,0,abbey,s,,abbs,1,1393336
+abbeystead climb,0,abbey,n,Abbey climb then west,abbw,1,9285622
+Littledale Long Riser,0,brook,,Brookh to baines top,bainese,1,20846355
+Cattle Grids,1,baines,w,,bainese,0,6709741
+Littledale Rd Climb,0,brook,s,Brookh to junc,bainese,0,699939
+Littledale Rd Climb,0,baines,w,,bainese,0,699942
+Littledale Rd from Postern Gate Rd,0,stock,e,,bainesw,1,1266492
+Littledale DEATH WALL,1,stock,e,,bainesw,0,13016588
+God Tarn it!,0,proc,n,,blea,1,15899592
+Procter Moss to cross road,1,proc,n,,blea,0,2216967
+Quernmore Rd Climb,0,stock,n,from  caton,caton,1,913896
+Littlefell Lane Pure Climb full east,0,condor,w,,cond,1,9557840
+Condor Bottom - Start to Little Fell Lane,1,condor,w,,cond,0,8167211
+Little fell lane short,1,condor,w,,cond,0,1730401
+Littledale Rd to Roeburndale Rd,0,little,n,,crossgill,1,1385711
+Forest Hills Climb .,0,ellel,n,,forest,1,8131656
+Hazelrigg Lane Pure Climb,1,ellel,n,,forest,0,9443327
+Hala Back Guuuuurl,0,hala,e,,hala,1,9984866
+halton army camp to cross roads,0,halton,w,,halt1,1,1148345
+Foundry Lane (snapped),0,halton,n,,halt2,1,5908755
+Climb out of Halton,0,halton,e,,halt3,1,18033931
+Green Lane Climb,0,halton,e,,halt4,1,1458606
+Park Lane climb,0,halton,e,,halt5,1,1001310
+PedalFest Power (Epic Events),0,harris,s,,harris,1,12590924
+Oakenclough Climb,0,harris,s,,harris,1,1266203
+CRC Harris End to Geoff Turner,1,harris,e,,harris,0,3544125
+The Row Climb,1,harris,e,,harris,0,883222
+RVCRC HC Club version 2013,1,harris,s,,harris,0,5937080
+OFFICIAL 100Climbs No76 Jubilee Tower,0,condor,e,,jubn,1,6688053
+jubilee tower (steep bit),1,condor,e,,jubn,0,8234701
+Official Jubilee Tower Hill Climb TT route,1,condor,e,,jubn,0,946980
+Jubilee Tower - the easy way,0,abbey,w,abbey road then to jub,jubs1,1,12100969
+Plantation Up,1,abbey,w,From abbey road,jubs1,0,1602460
+Abbeystead Ln Climb,0,abbey,n,abbey to jub,jubs2,1,1046889
+Jubilee from River at Long Lane to Tower only,0,tarnb,e,,jubs3,1,5258630
+Langshaw Lane up,0,ellel,e,,langshaw,1,6504482
+Grab Lane Up Quernmore Rd To Newlands Rd,0,lanc,e,,newlands,1,3928146
+Proctor Moss North,0,dolp,n,,proce,1,1723027
+Procter Moss Rd Climb,0,proc,s,full,procw,1,950399
+Procter Moss (extended),1,proc,s,sections 1& 2,procw,0,3602574
+Procter Moss Rd - Steep Section,1,proc,s,sect 1,procw,0,3874708
+Proctor moss west,1,proc,s,top,procw,0,2479492
+Roeburndale from Brookhouse,0,brook,e,full,roeb,1,1319964
+Roeburndale Rd Longer Version,1,brook,e,top from junc,roeb,0,3436930
+CRC Star Bank HC,0,star,e,,star1,1,3543920
+crag hill hill rep short (junction to gate),1,star,e,first part,star1,0,6019132
+Swine,0,dolp,w,starb,star2,1,5840333
+Stock-A-Bank Full Length,0,stock,w,,stock,1,2407805
+Short sharp climb to Higher Emmetts,0,tarnb,e,,tarnbr,1,16919853
+To the Windmills...,0,brook,e,,wind,1,1144898
+Witches hat,0,stock,n,,witch,1,5520770
+Waste Ln Climb,0,wyre,e,top round corner,wyre,1,699944
+Endless,1,wyre,e,top round corner,wyre,0,16271713
+Massif Marshaw,1,wyre,e,top to corner,wyre,0,3747204

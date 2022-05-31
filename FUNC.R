@@ -67,8 +67,8 @@ vv_process_local <- function(dt) {
 }
 
 get_local_data <- function(location) {
-  path <- if (location == "lancaster") "data/local_climbs.csv" else "data_aux/settle_local.csv"
-  out <- read_csv("data_aux/settle_local.csv", show_col_types = FALSE, progress = FALSE)
+  path <- if (location == "lancaster") "data_aux/local_climbs.csv" else "data_aux/settle_local.csv"
+  out <- read_csv(path, show_col_types = FALSE, progress = FALSE)
   attr(out, "location") <- location
   out
 }

@@ -14,12 +14,12 @@ library(reactable)
 
 ```{r dt}
 date <- "2021-08-02"
-fname <- paste0("../data_processed/local_", date, ".RDS")
+fname <- paste0("../data_processed/lancaster_", date, ".RDS")
 dt <- readRDS(fname) %>% 
-  mutate(power = ifelse(power_meter, power_w, "")) %>% 
-  rename(behind = behind_pc) %>% 
+  mutate(power = ifelse(power_meter, power, "")) %>% 
+  rename(behind = behind_pct) %>% 
   select(-c(sub, notes, area, dist_away, vam, p_vam, activity,
-            heart_rate, cadence, power_w, power_meter, segment_id, city, direction, cat)) 
+            heart_rate, cadence, power_meter, segment_id, city, direction, cat)) 
 ```
 
 Local climbs `r date`, full segments only. Reduced number of columns.
@@ -27,7 +27,7 @@ Local climbs `r date`, full segments only. Reduced number of columns.
 ```{r data}
 dt %>% 
 #  filter(full == 1) %>% 
-#  arrange(desc(behind_pc), desc(full)) %>% 
+#  arrange(desc(behind_pc)t, desc(full)) %>% 
   arrange(climb, desc(full)) %>% 
   mutate(name = str_sub(name, 1, 30)) %>% 
   my_kable()
