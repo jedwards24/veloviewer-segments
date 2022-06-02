@@ -3,7 +3,9 @@ library(tidyverse)
 library(edwards)
 library(lubridate)
 
-file <- latest_file("data_processed", "local", ".RDS")
+file <- latest_file("data_processed", "local", ext = "RDS")
+file <- latest_file("data_processed", "settle", ext = "RDS")
+
 dt <- readRDS(file) %>% 
   select(-city)
 
@@ -75,30 +77,33 @@ dtp %>%
 
 # power all segs --------------
 # power 
-latest <- latest_file(".", "bike_segments")
+latest <- latest_file("data_processed", "bike_segments")
 dt_all <- readRDS(latest)
 
 dtp2 <- dt_all %>% 
   filter(power_meter == 1) %>%
-  rename(time = elapsed_time) %>% 
   mutate(time = time / 60) %>% 
   arrange(desc(time)) %>% 
-  mutate(cum_max_power = cummax(power_w)) %>% 
-  mutate(is_max = (cum_max_power == power_w))
+  mutate(cum_max_power = cummax(power)) %>% 
+  mutate(is_max = (cum_max_power == power))
 
 #frontier
 dtp2 %>% 
   filter(is_max) %>% 
+  mutate(name = str_remove(name, "OFFICIAL (North-west Climbs|100Climbs)")) %>% 
   ggplot(aes(x = time, y = cum_max_power, label = name)) +
   geom_point() +
-  ggrepel::geom_text_repel() +
+  ggrepel::geom_label_repel(max.overlaps = 20) +
   geom_line(group = 1) +
-  theme_minimal()
+  theme_minimal() +
+  scale_x_log10() +
+  labs(x = "Time (mins)", y = "Power (W)")
 
 # table
 dtp2 %>% 
-  filter(power_w == cum_max_power) %>% 
-  select(power_w, time, elv_gain_m, name) 
+  filter(power == cum_max_power) %>% 
+  select(power, time, elv_gain, name) %>% 
+  prinf()
 
 # behind vs score ---------
 dt %>% 

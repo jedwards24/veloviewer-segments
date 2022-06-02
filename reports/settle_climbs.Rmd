@@ -9,7 +9,6 @@ library(tidyverse)
 library(edwards)
 library(knitr)
 library(kableExtra)
-library(reactable)
 ```
 
 ```{r dt}
@@ -29,13 +28,6 @@ dt %>%
   arrange(climb) %>% 
 #  mutate(name = str_sub(name, 1, 30)) %>% 
   my_kable()
-```
-
-```{r table1, include = T}
-dt %>% 
-  select(climb, behind, power, when, dist, time, elv_gain, grade, score, tries, pos, total) %>% 
-#  mutate(name = str_sub(name, 1, 25)) %>% 
-  reactable(filterable = T, defaultPageSize = 60, compact = T, striped = T, fullWidth = F)
 ```
 
 ```{r table2, include = T}
